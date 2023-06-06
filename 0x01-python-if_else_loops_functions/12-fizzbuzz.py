@@ -11,4 +11,6 @@ def fizzbuzz():
             print(i, end=" ")
 
 # Calling the function
+
+
 fizzbuzz()
