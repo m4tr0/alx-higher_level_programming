@@ -40,27 +40,3 @@ void print_python_bytes(PyObject *p)
 	printf(" %02x", bytes[i] & 0xff);
 	printf("\n");
 }
-
-int main(void)
-{
-Py_Initialize();
-
-
-	PyObject *list_obj = PyList_New(3);
-	PyList_SetItem(list_obj, 0, PyLong_FromLong(10));
-	PyList_SetItem(list_obj, 1, PyBytes_FromString("Hello"));
-	PyList_SetItem(list_obj, 2, PyFloat_FromDouble(3.14));
-
-	print_python_list(list_obj);
-
-	PyObject *bytes_obj = PyBytes_FromStringAndSize("example", 7);
-
-	print_python_bytes(bytes_obj);
-
-	Py_DECREF(list_obj);
-	Py_DECREF(bytes_obj);
-
-	Py_Finalize();
-
-	return (0);
-}
