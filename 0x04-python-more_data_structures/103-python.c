@@ -1,6 +1,13 @@
 #include <Python.h>
 #include <stdio.h>
 
+/**
+ * print_python_bytes - Prints bytes information
+ *
+ * @p: Python Object
+ * Return: no return
+ */
+
 void print_python_list(PyObject *p)
 {
     Py_ssize_t size, i;
@@ -17,6 +24,13 @@ void print_python_list(PyObject *p)
 	printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
     }
 }
+
+/**
+ * print_python_list - Prints lists information
+ *
+ * @p: Python Object
+ * Return: no return
+ */
 
 void print_python_bytes(PyObject *p)
 {
