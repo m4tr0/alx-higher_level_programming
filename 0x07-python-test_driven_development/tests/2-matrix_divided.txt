@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+"""
+Test cases for the matrix_divided function.
+"""
+
+import doctest
+import sys
+from matrix_divided import matrix_divided
+
+# Run the doctest
+result = doctest.testmod()
+
+# Check if the tests passed
+if result.failed == 0:
+    print(f"{result.attempted} passed and 0 failed.")
+    print("Test passed!")
+else:
+    print(f"{result.attempted - result.failed} passed and {result.failed} failed.")
+    print("Some tests failed.")
+
+if __name__ == "__main__":
+    sys.exit(result.failed)
