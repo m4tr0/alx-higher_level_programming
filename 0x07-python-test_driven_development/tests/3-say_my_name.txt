@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+"""
+Test cases for the say_my_name function.
+"""
+
+import doctest
+from io import StringIO
+import sys
+from say_my_name import say_my_name
+
+# Redirect stdout to capture the output
+sys.stdout = StringIO()
+
+# Run the doctest
+doctest.testmod()
+
+# Capture the output
+output = sys.stdout.getvalue()
+
+# Restore stdout
+sys.stdout = sys.__stdout__
+
+# Check if the tests passed
+if "Test passed." in output:
+    print("All tests passed!")
+else:
+    print("Some tests failed.")
