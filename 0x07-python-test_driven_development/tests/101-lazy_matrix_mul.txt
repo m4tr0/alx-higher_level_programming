@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+"""
+Test cases for lazy_matrix_mul function.
+"""
+
+import unittest
+from 101-lazy_matrix_mul import lazy_matrix_mul
+
+class TestLazyMatrixMul(unittest.TestCase):
+    def test_matrix_multiplication(self):
+        result = lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+        self.assertEqual(result.tolist(), [[7, 10], [15, 22]])
+
+        result = lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+        self.assertEqual(result.tolist(), [[13, 16]])
+
+    def test_invalid_matrix_multiplication(self):
+        with self.assertRaises(ValueError) as context:
+            lazy_matrix_mul([[1, 2]], [[3, 4, 5], [6, 7, 8]])
+
+        self.assertEqual(
+            str(context.exception),
+            "Matrices cannot be multiplied."
+        )
+
+if __name__ == '__main__':
+    unittest.main()
