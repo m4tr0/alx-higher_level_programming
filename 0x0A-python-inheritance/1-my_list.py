@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Defines an inherited list class MyList."""
+    """
+    Defines an inherited list class MyList.
+    """
 
 class MyList(list):
     """
@@ -10,5 +12,4 @@ class MyList(list):
         """
         Prints the list in sorted (ascending) order.
         """
-        sorted_list = sorted(self)
-        print(sorted_list))
+        print(sorted_list)
