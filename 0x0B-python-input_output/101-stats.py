@@ -14,18 +14,16 @@ try:
 
         # Extract relevant information from the input line
         parts = line.split(" ")
-        if len(parts) < 7:
-            continue
+        if len(parts) >= 7:
+            status_code = int(parts[-2])
+            file_size = int(parts[-1])
 
-        status_code = int(parts[-2])
-        file_size = int(parts[-1])
+            # Compute total file size
+            total_file_size += file_size
 
-        # Compute total file size
-        total_file_size += file_size
-
-        # Count status codes
-        if status_code in status_codes:
-            status_codes[status_code] += 1
+            # Count status codes
+            if status_code in status_codes:
+                status_codes[status_code] += 1
 
         # Print statistics every 10 lines
         if line_count % 10 == 0:
@@ -39,7 +37,7 @@ except KeyboardInterrupt:
     pass
 
 # Print final statistics
-print("Total file size:", total_file_size)
+print("File size:", total_file_size)
 for code, count in sorted(status_codes.items()):
     if count > 0:
         print(code, ":", count)
