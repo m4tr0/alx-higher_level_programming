@@ -1,8 +1,12 @@
+#!/usr/bin/python3
+""" unit test for bases """
 import unittest
 from models.base import Base
 
 
 class BaseTestCase(unittest.TestCase):
+    """ class for base test """
+
     def test_base_id_increment(self):
         b1 = Base()
         self.assertEqual(b1.id, 1)
